@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    max-width: 95%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+header {
+    background: #004d7a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header .borda-animada {
+    position: relative;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 0, 0 , 0.5);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+header .borda-animada:before {
+    content: '';
+    position: absolute;
+    inset: -10px 140px;
+    background: linear-gradient(315deg , #00ccff, #d400d4);
+    background-size: cover;
+    transition: 0.5s;
+    animation: animate 4s linear infinite;
+}
+
+header .borda-animada:hover:before{
+    inset: -20px 0px;
+}
+
+header .borda-animada::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: #162052;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+header .borda-animada .container-img {
+    position: absolute;
+    inset: 30px;
+    border: 6px solid #070a1c;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+header .borda-animada .container-img img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+
+nav ul {
+    list-style: none;
+    background: #0056b3;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #f1f1f1;
+    color: #0056b3;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.carrosel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    justify-content: center;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.carrosel img {
+    max-width: 300px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carrosel p {
+    max-width: 300px;
+    width: auto;
+    height: auto;
+    color: white;
+    text-align: justify;
+}
+
+.carrosel a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #262c37;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    font-size: 13px;
+    transition: 0.5s;
+}
+
+.carrosel .projeto { 
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #0056b3;
+    height: 360px;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 10px #ccc;
+    margin-bottom: 30px;
+}
+
+.carrosel a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.carrosel a span{
+    display: block;
+    position: absolute;
+    background: white;
+}
+
+.carrosel a span:nth-child(1){
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+.carrosel a:hover span:nth-child(1) {
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.5s;
+} /*faz a animação de descer a barrinha na lateral esquerda do botão*/
+
+.carrosel a span:nth-child(2){
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.carrosel a:hover span:nth-child(2) {
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+} /*faz a animação de dezlizar a barrinha na parte de baixo do botão*/
+
+.carrosel a span:nth-child(3){
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+.carrosel a:hover span:nth-child(3) {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+} /*faz a animação de subir a barrinha na lateral direita do botão*/
+
+.carrosel a span:nth-child(4){
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+.carrosel a:hover span:nth-child(4) {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 0.5s;
+} /*faz a animação de subir a barrinha na lateral direita do botão*/
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #333;
+    color: white;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+}
+
+footer .social-icons a:hover {
+    color: #ccc;
+}
+@keyframes animate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@media (min-width: 800px) {
+    body {
+        width: 80%;
+        max-width: 1200px;
+    }
+}
